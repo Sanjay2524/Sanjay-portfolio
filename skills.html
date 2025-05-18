@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sanjay S - Skills & Certifications</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-image: url('laptop bg image.png');
+      background-size: cover;
+      background-position: center;
+      transition: background-image 0.3s ease;
+    }
+    @media (max-width: 768px) {
+      body {
+        background-image: url('mobile bg image.png');
+      }
+    }
+
+    nav#navbar {
+      background-color: #123456; /* navy-blue shade */
+      padding: 1rem 2rem;
+      color: #88c0d0;
+      font-weight: 600;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+    }
+    nav#navbar a {
+      color: #88c0d0;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    nav#navbar a:hover,
+    nav#navbar a.active {
+      color: #e0f7fa;
+      border-bottom: 2px solid #e0f7fa;
+      padding-bottom: 2px;
+    }
+
+    main {
+      margin-top: 70px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255 255 255 / 0.85);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: background-color 0.3s ease;
+    }
+    .dark main {
+      background: rgba(30 41 59 / 0.8);
+      color: #cbd5e1;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #123456;
+    }
+    .dark h1 {
+      color: #81e6d9;
+    }
+
+    /* Submenu container */
+    #submenu {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    #submenu button {
+      background: none;
+      border: none;
+      color: #123456;
+      font-weight: 600;
+      font-size: 1.125rem;
+      cursor: pointer;
+      padding-bottom: 4px;
+      transition: color 0.3s, border-bottom 0.3s;
+    }
+    #submenu button.active {
+      border-bottom: 3px solid #2c7a7b;
+      color: #2c7a7b;
+    }
+    .dark #submenu button {
+      color: #81e6d9;
+    }
+    .dark #submenu button.active {
+      border-bottom-color: #81e6d9;
+      color: #81e6d9;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      color: #234e70;
+    }
+    th {
+      background-color: #2c7a7b;
+      color: #e0f2f1;
+    }
+    .dark th {
+      background-color: #285e61;
+      color: #a0f0e0;
+    }
+    .dark td {
+      color: #cbd5e1;
+      border-color: #475569;
+    }
+
+    /* Certifications list styling */
+    #certifications-list {
+      list-style: disc inside;
+      color: #234e70;
+    }
+    .dark #certifications-list {
+      color: #cbd5e1;
+    }
+
+  </style>
+</head>
+<body class="bg-blue-50 dark:bg-gray-900 transition-colors duration-300">
+
+  <!-- Navigation -->
+  <nav id="navbar" aria-label="Primary navigation">
+    <a href="index.html">Home</a>
+    <a href="skills.html" class="active">Skills & Certifications</a>
+    <a href="projects.html">Projects</a>
+    <a href="achivements.html">Achievements</a>
+    <a href="contact.html">Contact</a>
+
+    <div style="flex-grow:1;"></div>
+
+    <!-- Dark Mode Toggle -->
+    <label for="dark-toggle" class="flex items-center gap-2 cursor-pointer select-none text-teal-700 dark:text-teal-300 font-semibold">
+      <input type="checkbox" id="dark-toggle" class="hidden" />
+      <div style="position: relative; width: 40px; height: 20px; background-color: #cbd5e1; border-radius: 9999px; box-shadow: inset 0 0 4px rgba(0,0,0,0.1);">
+        <span id="toggle-circle" style="content: ''; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; background: white; border-radius: 9999px; box-shadow: 0 0 2px rgba(0,0,0,0.2); transition: transform 0.3s ease;"></span>
+      </div>
+      Dark Mode
+    </label>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Skills & Certifications</h1>
+
+    <!-- Submenu -->
+    <div id="submenu">
+      <button id="btn-skills" class="active" aria-controls="skills-content" aria-expanded="true">Skills</button>
+      <button id="btn-certifications" aria-controls="certifications-content" aria-expanded="false">Certifications</button>
+    </div>
+
+    <!-- Skills Content -->
+    <section id="skills-content" aria-live="polite">
+      <table>
+        <thead>
+          <tr>
+            <th>Skill</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>HTML</td><td>Building responsive and accessible websites</td></tr>
+          <tr><td>CSS</td><td>Styling and layout design using Tailwind and Bootstrap</td></tr>
+          <tr><td>JavaScript</td><td>Interactive frontend development and DOM manipulation</td></tr>
+          <tr><td>SAP FICO</td><td>Financial accounting and controlling modules experience</td></tr>
+          <tr><td>SQL</td><td>Writing queries, joins, and database optimization</td></tr>
+          <tr><td>Project Management</td><td>Agile, Scrum, and Waterfall methodologies</td></tr>
+          <tr><td>Communication</td><td>Strong verbal and written communication skills</td></tr>
+          <tr><td>Team Leadership</td><td>Leading cross-functional teams to achieve project goals</td></tr>
+          <tr><td>Problem Solving</td><td>Analytical thinking to troubleshoot and resolve issues</td></tr>
+          <tr><td>Time Management</td><td>Efficient multitasking and deadline management</td></tr>
+          <!-- Add any other skills exactly as your old list -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Certifications Content (hidden initially) -->
+    <section id="certifications-content" hidden aria-live="polite">
+      <ul id="certifications-list">
+        <li>Tally Level 2</li>
+        <li>Cleared CSEET</li>
+        <li>Marketing Management - II</li>
+        <li>Excel Skills for Business Specialization</li>
+        <li>International Business</li>
+        <li>IELTS Specialization</li>
+        <li>Analytics for Decision Making</li>
+        <li>Strategic Management and Innovation</li>
+        <li>Financial Budgeting and Forecasting in Excel Complete Course</li>
+        <li>Master Budget - Managerial Accounting / Cost Accounting</li>
+        <li>Process Costing System - Cost Accounting - Managerial Accounting</li>
+        <li>Microsoft Excel Course From Beginner to Expert</li>
+        <li>Cost Volume Profit Analysis (CVP) - Managerial Accounting</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    // Dark mode toggle
+    const darkToggle = document.getElementById('dark-toggle');
+    const toggleCircle = document.getElementById('toggle-circle');
+    darkToggle.addEventListener('change', () => {
+      if (darkToggle.checked) {
+        document.documentElement.classList.add('dark');
+        toggleCircle.style.transform = 'translateX(20px)';
+      } else {
+        document.documentElement.classList.remove('dark');
+        toggleCircle.style.transform = 'translateX(0)';
+      }
+    });
+
+    // Submenu toggle between skills and certifications
+    const btnSkills = document.getElementById('btn-skills');
+    const btnCertifications = document.getElementById('btn-certifications');
+    const skillsContent = document.getElementById('skills-content');
+    const certificationsContent = document.getElementById('certifications-content');
+
+    btnSkills.addEventListener('click', () => {
+      btnSkills.classList.add('active');
+      btnSkills.setAttribute('aria-expanded', 'true');
+      btnCertifications.classList.remove('active');
+      btnCertifications.setAttribute('aria-expanded', 'false');
+
+      skillsContent.removeAttribute('hidden');
+      certificationsContent.setAttribute('hidden', '');
+    });
+
+    btnCertifications.addEventListener('click', () => {
+      btnCertifications.classList.add('active');
+      btnCertifications.setAttribute('aria-expanded', 'true');
+      btnSkills.classList.remove('active');
+      btnSkills.setAttribute('aria-expanded', 'false');
+
+      certificationsContent.removeAttribute('hidden');
+      skillsContent.setAttribute('hidden', '');
+    });
+  </script>
+
+</body>
+</html>

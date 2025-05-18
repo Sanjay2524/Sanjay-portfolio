@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Achievements - Sanjay S</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background-image: url('laptop bg image.png');
+      background-size: cover;
+      background-position: center;
+      transition: background-image 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background-image: url('mobile bg image.png');
+      }
+    }
+
+    nav#navbar {
+      background-color: #123456;
+      padding: 1rem 2rem;
+      color: #88c0d0;
+      font-weight: 600;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+    }
+
+    nav#navbar a {
+      color: #88c0d0;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    nav#navbar a:hover,
+    nav#navbar a.active {
+      color: #e0f7fa;
+      border-bottom: 2px solid #e0f7fa;
+      padding-bottom: 2px;
+    }
+
+    main {
+      margin-top: 70px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255 255 255 / 0.85);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .dark main {
+      background: rgba(30 41 59 / 0.8);
+      color: #cbd5e1;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #123456;
+    }
+
+    .dark h1 {
+      color: #81e6d9;
+    }
+
+    .toggle-buttons button {
+      background-color: #2c7a7b;
+      color: white;
+      font-weight: 600;
+      padding: 0.5rem 1.25rem;
+      border-radius: 0.5rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-buttons button:hover {
+      background-color: #1e4e50;
+    }
+
+    /* Modal styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      position: relative;
+    }
+
+    .dark .modal-content {
+      background-color: #1e293b;
+      color: #cbd5e1;
+    }
+
+    .close {
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+      color: #888;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #f00;
+    }
+
+    .certificate-img {
+      margin-top: 1rem;
+      width: 100%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body class="bg-blue-50 dark:bg-gray-900 transition-colors duration-300">
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <a href="index.html">Home</a>
+    <a href="skills.html">Skills & Certifications</a>
+    <a href="projects.html">Projects</a>
+    <a href="achivements.html" class="active">Achievements</a>
+    <a href="contact.html">Contact</a>
+
+    <div style="flex-grow:1;"></div>
+
+    <!-- Dark Mode Toggle -->
+    <label for="dark-toggle" class="flex items-center gap-2 cursor-pointer select-none text-teal-700 dark:text-teal-300 font-semibold">
+      <input type="checkbox" id="dark-toggle" class="hidden" />
+      <div style="position: relative; width: 40px; height: 20px; background-color: #cbd5e1; border-radius: 9999px;">
+        <span id="toggle-circle" style="position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; background: white; border-radius: 9999px; transition: transform 0.3s ease;"></span>
+      </div>
+      Dark Mode
+    </label>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Achievements</h1>
+    <div class="toggle-buttons">
+      <button onclick="openModal('nss')">NSS</button>
+      <button onclick="openModal('scouts')">Scouts</button>
+    </div>
+  </main>
+
+  <!-- NSS Modal -->
+  <div id="modal-nss" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('nss')">&times;</span>
+      <h2 class="text-xl font-bold mb-2">NSS - National Service Scheme</h2>
+      <p>
+        At the National Integration Camp (NIC), I had the opportunity to engage in cultural exchange,
+        lead my team to victory, and develop valuable skills. I gained new experiences, showcased talents,
+        and fostered friendships with peers from diverse backgrounds. My leadership and communication skills
+        were further strengthened, earning my team the title of best in the camp.
+      </p>
+      <button onclick="showCertificate('nic')" class="mt-4 bg-teal-600 text-white px-4 py-2 rounded">NIC Certificate</button>
+      <img id="nic-certificate" src="sanjay nic certificate.jpg" alt="NIC Certificate" class="certificate-img hidden" />
+    </div>
+  </div>
+
+  <!-- Scouts Modal -->
+  <div id="modal-scouts" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('scouts')">&times;</span>
+      <h2 class="text-xl font-bold mb-2">Scouts - Rajya Puraskar Award</h2>
+      <p>
+        Honored with the esteemed Rajya Puraskar Award by the Bharat Scouts and Guides,
+        celebrating my exceptional commitment to community welfare, leadership excellence,
+        and personal growth. This recognition highlights my ability to lead impactful service
+        initiatives, foster teamwork, and uphold the core values of integrity, responsibility,
+        and service to society.
+      </p>
+      <button onclick="showCertificate('scouts')" class="mt-4 bg-teal-600 text-white px-4 py-2 rounded">Scouts Certificate</button>
+      <img id="scouts-certificate" src="sanjay scout certificate.jpg" alt="Scouts Certificate" class="certificate-img hidden" />
+    </div>
+  </div>
+
+  <script>
+    // Dark mode toggle
+    const darkToggle = document.getElementById('dark-toggle');
+    const toggleCircle = document.getElementById('toggle-circle');
+    darkToggle.addEventListener('change', () => {
+      document.documentElement.classList.toggle('dark', darkToggle.checked);
+      toggleCircle.style.transform = darkToggle.checked ? 'translateX(20px)' : 'translateX(0)';
+    });
+
+    // Modal control
+    function openModal(type) {
+      document.getElementById(`modal-${type}`).style.display = 'block';
+    }
+
+    function closeModal(type) {
+      document.getElementById(`modal-${type}`).style.display = 'none';
+      // Hide image when modal closes
+      if (type === 'nss') document.getElementById('nic-certificate').classList.add('hidden');
+      if (type === 'scouts') document.getElementById('scouts-certificate').classList.add('hidden');
+    }
+
+    function showCertificate(type) {
+      if (type === 'nic') {
+        document.getElementById('nic-certificate').classList.remove('hidden');
+      } else if (type === 'scouts') {
+        document.getElementById('scouts-certificate').classList.remove('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
